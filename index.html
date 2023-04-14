@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/img/favicon.svg">
+  <title>Carousel Project</title>
+</head>
+
+<body>
+
+  <div id="carousel" class="carousel">
+
+    <div id="slides-container" class="slides">
+      <div class="slide active">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
+    </div>
+
+    <div id="controls-container" class="controls">
+      <div id="pause-btn" class="control control-pause">Pause</div>
+      <div id="prev-btn" class="control control-prev">Previous</div>
+      <div id="next-btn" class="control control-next">Next</div>
+    </div>
+
+    <div id="indicators-container" class="indicators">
+      <div class="indicator active"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+    </div>
+
+  </div>
+
+  <script src="assets/main.js" type="module"></script>
+</body>
+
+</html>
