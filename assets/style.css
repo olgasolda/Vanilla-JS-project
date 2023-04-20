@@ -175,3 +175,14 @@ body {
   background-color: rgba(67, 179, 95, 0.5);
   color: white;
 }
+
+@media (min-width: 992px) {
+  .control-next,
+  .control-prev,
+  .control-pause {
+    cursor: pointer;
+  }
+  .indicator {
+    cursor: pointer;
+  }
+}
