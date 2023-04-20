@@ -1,22 +1,29 @@
-/*
-essential styles:
-these make the slideshow work
-*/
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 
 .slides {
+  max-width: 100vw;
+  max-height: 100vh;
   position: relative;
-  height: 150px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   list-style-type: none;
+  text-align: center;
 }
 
 .slide {
   position: absolute;
   left: 0px;
   top: 0px;
+  right: 0px;
+  bottom: 0px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background: #4f926dc8;
+  background-repeat: no-repeat;
   opacity: 0;
   z-index: -999;
   transition: opacity 0.25s;
@@ -24,77 +31,147 @@ these make the slideshow work
 
 .active {
   opacity: 1;
-  z-index: 0;
-}
-
-/*
-non-essential styles:
-just for appearance; change whatever you want
-*/
-
-.slide {
-  font-size: 40px;
-  padding: 40px;
-  box-sizing: border-box;
-  background: #333;
-  color: #fff;
 }
 
 .slide:nth-of-type(1) {
-  background: red;
+  background: url(img/1.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .slide:nth-of-type(2) {
-  background: orange;
+  background: url(img/2.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .slide:nth-of-type(3) {
-  background: green;
+  background: url(img/3.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .slide:nth-of-type(4) {
-  background: blue;
+  background: url(img/4.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .slide:nth-of-type(5) {
-  background: purple;
+  background: url(img/5.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-body {
-  margin: 20px;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+.fa-play-circle,
+.fa-pause-circle {
+  color: white;
+  font-size: 20vh;
 }
 
-.slides {
-  margin-bottom: 20px;
+.fa-angle-left,
+.fa-angle-right {
+  color: white;
+  font-size: 40px;
 }
 
-.indicators,
 .controls {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-.indicator,
-.control {
-  padding: 0.5em;
-  min-width: 100px;
-  min-height: 40px;
+.control-next,
+.control-prev,
+.control-pause {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(201, 201, 221);
-  user-select: none;
+  z-index: 1;
+}
+
+.control-pause {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.control-pause i {
+  position: absolute;
+  display: block;
+  opacity: 1;
+}
+
+.control-pause:hover,
+.control-pause:focus {
+  transition: opacity 0.5s ease-in 0.5s;
+  opacity: 1;
+}
+
+.control-prev {
+  position: absolute;
+  left: 0;
+  width: 10%;
+}
+
+.control-next {
+  position: absolute;
+  right: 0;
+  width: 10%;
+}
+
+.control-prev:hover,
+.control-prev:focus {
+  background: linear-gradient(
+    to right,
+    rgba(2, 31, 8, 0.8),
+    rgba(10, 95, 18, 0)
+  );
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.control-next:hover,
+.control-next:focus {
+  background: linear-gradient(
+    to right,
+    rgba(2, 31, 8, 0.8),
+    rgba(10, 95, 18, 0)
+  );
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.indicators {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.indicator {
+  width: 25px;
+  height: 25px;
+  margin: -40px 7.5px 0;
+  background-color: rgb(190, 77, 24);
+  border-radius: 50%;
+}
+
+.indicator:hover {
   cursor: pointer;
 }
 
-.indicator:hover,
-.control:hover {
-  background-color: rgba(255, 99, 71, 0.5);
-  color: white;
+.indicator.active {
+  outline: solid 2px white;
+  background-color: rgb(126, 3, 3);
 }
 
-.indicator.active {
-  background-color: darkred;
+.control:hover {
+  background-color: rgba(67, 179, 95, 0.5);
+  color: white;
 }
