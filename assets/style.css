@@ -138,7 +138,7 @@ body {
 .control-next:hover,
 .control-next:focus {
   background: linear-gradient(
-    to right,
+    to left,
     rgba(2, 31, 8, 0.8),
     rgba(10, 95, 18, 0)
   );
