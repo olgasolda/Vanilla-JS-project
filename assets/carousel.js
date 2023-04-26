@@ -1,6 +1,6 @@
 class Carousel {
   constructor(p) {
-    const settings = { ...{ containerID: '#carousel', slideID: '.slide', interval: 5000, isPlaying: true }, ...p };
+    const settings = { ...{ containerID: '#carousel', slideID: '.slide', interval: 2000, isPlaying: true }, ...p };
 
     this.container = document.querySelector(settings.containerID);
     this.slides = this.container.querySelectorAll(settings.slideID);
@@ -106,9 +106,9 @@ class Carousel {
 
   _playHandler() {
     if (!this.isPlaying) {
-      this._tick();
       this._pauseVisible();
       this.isPlaying = true;
+      this._tick();
     }
   }
 
